@@ -17,7 +17,7 @@ jobs:
       - name: print event
         run: echo "The job was triggered by ${{github.event_name}} event."
       - name: print branch
-        run: echo "Current branch is ${{github.branch}}."
+        run: echo "Current branch is ${{github.branch_name}}."
       - name: list all files in repo
         run: find /
     
