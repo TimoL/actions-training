@@ -1,0 +1,23 @@
+name: GitHub Actions Demo
+
+on:
+  push:
+    paths-ignore: ".github"
+  pull_request:
+    branches: main
+  schedule:
+    - cron: "15 6 * * SUN"
+
+jobs:
+  Build:
+    name: Build demo
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: print event
+        run: echo "The job was triggered by ${{github.event_name}} event."
+      - name: print branch
+        run: echo "Current branch is ${{github.branch_name}}."
+      - name: list all files in repo
+        run: tree
+    
